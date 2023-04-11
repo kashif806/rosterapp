@@ -1,0 +1,11 @@
+version: '3 '
+services:
+  frontend:
+    build: 
+      dockerfile: Dockerfile.dev
+      context: ./rosterapp-frontend/
+    volumes:
+      - ./rosterapp-frontend:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
