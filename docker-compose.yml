@@ -9,3 +9,10 @@ services:
       - /app/node_modules
     ports:
       - 3000:3000
+  backend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./rosterapp-backend
+    volumes:
+      - ./rosterapp-backend:/app
+      - /app/node_modules
