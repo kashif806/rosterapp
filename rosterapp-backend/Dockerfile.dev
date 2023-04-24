@@ -3,7 +3,8 @@ FROM node:19-alpine
 WORKDIR /app
 
 COPY ./package.json ./
-RUN npm install
+RUN npm install --include=dev && npm i nodemon -g
 COPY . .
 
-CMD [ "tail","-f" ]
+CMD [ "nodemon","server.js" ]
+# CMD [ "tail","-f" ]
